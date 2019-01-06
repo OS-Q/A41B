@@ -1,4 +1,4 @@
-﻿# W10：[低功耗](https://github.com/OS-Q/W10) 
+﻿# W10：[超低功耗](https://github.com/OS-Q/W10) 
 
 [![sites](OS-Q/OS-Q.png)](http://www.OS-Q.com)
 
@@ -10,7 +10,7 @@
 
 低功耗控制平台
 
-### [共用资源](https://github.com/OS-Q/W10/wiki) 
+### [共用资源](OS-Q/)
 
 
 ---
@@ -18,6 +18,35 @@
 - 边缘设备命名规则：体系 Q:[1,4] -> 节点 M:[1,12] -> 平台 W:[1,52] -> 设备 D:[1,365]
 
 - naming patterns：system Q[1,4] -> node M[1,12] -> platform W[1,52] -> device D[1,365]
+
+## [包含设备](https://github.com/OS-Q/W10/wiki) 
+
+#### D64：[NULL](https://github.com/OS-Q/D64)
+
+
+
+#### D65：[NULL](https://github.com/OS-Q/D65)
+
+
+
+#### D66：[NULL](https://github.com/OS-Q/D66)
+
+
+
+#### D67：[NULL](https://github.com/OS-Q/D67)
+
+
+
+#### D68：[NULL](https://github.com/OS-Q/D68)
+
+
+
+#### D69：[NULL](https://github.com/OS-Q/D69)
+
+
+#### D70：[NULL](https://github.com/OS-Q/D70)
+
+
 
 ## [同级平台](https://github.com/OS-Q/M3/wiki) 
 
