@@ -1,6 +1,6 @@
 {
-    "name": "framework-N5",
-    "description": "framework-N5 with Arduino (Nordic NRF5 Core)",
+    "name": "framework-N9",
+    "description": "framework-N9 with Arduino (Nordic NRF5 Core)",
     "version": "1.0.0",
     "url": "https://github.com/sandeepmistry/arduino-nRF5"
 }
