@@ -1,6 +1,15 @@
 {
-    "name": "framework-N19",
-    "description": "framework-N19 Arduino (Nordic NRF5 Core)",
-    "version": "1.0.0",
-    "url": "https://github.com/OS-Q/N19"
+    "name": "A41B",
+    "version": "1.700.2",
+    "description": "Arduino Wiring-based Framework for Nordic Semiconductor nRF5 based boards",
+    "keywords": [
+        "framework",
+        "arduino",
+        "nordic semiconductor",
+        "nrf5"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sandeepmistry/arduino-nRF5"
+    }
 }

@@ -1,8 +1,91 @@
+# Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
+# Copyright (c) 2016 Sandeep Mistry All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
 menu.chip=Chip
 menu.softdevice=Softdevice
 menu.version=Version
 menu.lfclk=Low Frequency Clock
 menu.board_variant=Board Variant
+
+# nRF52833 variants
+###################
+
+Generic_nRF52833.name=Generic nRF52833
+
+Generic_nRF52833.upload.tool=sandeepmistry:openocd
+Generic_nRF52833.upload.target=nrf52
+Generic_nRF52833.upload.maximum_size=524288
+
+Generic_nRF52833.bootloader.tool=sandeepmistry:openocd
+
+Generic_nRF52833.build.mcu=cortex-m4
+Generic_nRF52833.build.f_cpu=64000000
+Generic_nRF52833.build.board=GENERIC
+Generic_nRF52833.build.core=nRF5
+Generic_nRF52833.build.variant=Generic
+Generic_nRF52833.build.variant_system_lib=
+Generic_nRF52833.build.extra_flags=-DNRF52833_XXAA
+Generic_nRF52833.build.float_flags=-mfloat-abi=hard -mfpu=fpv4-sp-d16
+Generic_nRF52833.build.ldscript=nrf52833_xxaa.ld
+
+Generic_nRF52833.menu.softdevice.none=None
+Generic_nRF52833.menu.softdevice.none.softdevice=none
+Generic_nRF52833.menu.softdevice.none.softdeviceversion=
+
+Generic_nRF52833.menu.lfclk.lfxo=Crystal Oscillator
+Generic_nRF52833.menu.lfclk.lfxo.build.lfclk_flags=-DUSE_LFXO
+Generic_nRF52833.menu.lfclk.lfrc=RC Oscillator
+Generic_nRF52833.menu.lfclk.lfrc.build.lfclk_flags=-DUSE_LFRC
+Generic_nRF52833.menu.lfclk.lfsynt=Synthesized
+Generic_nRF52833.menu.lfclk.lfsynt.build.lfclk_flags=-DUSE_LFSYNT
+
+
+BBCmicrobitV2.name=BBC micro:bit V2
+
+BBCmicrobitV2.vid.0=0x0d28
+BBCmicrobitV2.pid.0=0x0204
+
+BBCmicrobitV2.upload.tool=sandeepmistry:openocd
+BBCmicrobitV2.upload.protocol=cmsis-dap
+BBCmicrobitV2.upload.target=nrf52
+BBCmicrobitV2.upload.maximum_size=524288
+BBCmicrobitV2.upload.setup_command=transport select swd;
+BBCmicrobitV2.upload.use_1200bps_touch=false
+BBCmicrobitV2.upload.wait_for_upload_port=false
+BBCmicrobitV2.upload.native_usb=false
+
+BBCmicrobitV2.bootloader.tool=sandeepmistry:openocd
+
+BBCmicrobitV2.build.mcu=cortex-m4
+BBCmicrobitV2.build.f_cpu=64000000
+BBCmicrobitV2.build.board=BBC_MICROBIT_V2
+BBCmicrobitV2.build.core=nRF5
+BBCmicrobitV2.build.variant=BBCmicrobitV2
+BBCmicrobitV2.build.variant_system_lib=
+BBCmicrobitV2.build.extra_flags=-DNRF52833_XXAA
+BBCmicrobitV2.build.float_flags=-mfloat-abi=hard -mfpu=fpv4-sp-d16
+BBCmicrobitV2.build.ldscript=nrf52833_xxaa.ld
+
+BBCmicrobitV2.build.lfclk_flags=-DUSE_LFSYNT
+
+BBCmicrobitV2.menu.softdevice.none=None
+BBCmicrobitV2.menu.softdevice.none.softdevice=none
+BBCmicrobitV2.menu.softdevice.none.softdeviceversion=
+
 
 # nRF52832 variants
 ###################
@@ -119,6 +202,42 @@ hackaBLE.menu.lfclk.lfrc.build.lfclk_flags=-DUSE_LFRC
 hackaBLE.menu.lfclk.lfsynt=Synthesized
 hackaBLE.menu.lfclk.lfsynt.build.lfclk_flags=-DUSE_LFSYNT
 
+
+hackaBLE_v2.name=Electronut labs hackaBLE_v2
+
+hackaBLE_v2.upload.tool=sandeepmistry:openocd
+hackaBLE_v2.upload.target=nrf52
+hackaBLE_v2.upload.maximum_size=524288
+
+hackaBLE_v2.bootloader.tool=sandeepmistry:openocd
+
+hackaBLE_v2.build.mcu=cortex-m4
+hackaBLE_v2.build.f_cpu=16000000
+hackaBLE_v2.build.board=ELECTRONUT_hackaBLE_v2
+hackaBLE_v2.build.core=nRF5
+hackaBLE_v2.build.variant=hackaBLE_v2
+hackaBLE_v2.build.variant_system_lib=
+hackaBLE_v2.build.extra_flags=-DNRF52
+hackaBLE_v2.build.float_flags=-mfloat-abi=hard -mfpu=fpv4-sp-d16
+hackaBLE_v2.build.ldscript=nrf52_xxaa.ld
+
+hackaBLE_v2.menu.softdevice.none=None
+hackaBLE_v2.menu.softdevice.none.softdevice=none
+hackaBLE_v2.menu.softdevice.none.softdeviceversion=
+
+hackaBLE_v2.menu.softdevice.s132=S132
+hackaBLE_v2.menu.softdevice.s132.softdevice=s132
+hackaBLE_v2.menu.softdevice.s132.softdeviceversion=2.0.1
+hackaBLE_v2.menu.softdevice.s132.upload.maximum_size=409600
+hackaBLE_v2.menu.softdevice.s132.build.extra_flags=-DNRF52 -DS132 -DNRF51_S132
+hackaBLE_v2.menu.softdevice.s132.build.ldscript=armgcc_s132_nrf52832_xxaa.ld
+
+hackaBLE_v2.menu.lfclk.lfxo=Crystal Oscillator
+hackaBLE_v2.menu.lfclk.lfxo.build.lfclk_flags=-DUSE_LFXO
+hackaBLE_v2.menu.lfclk.lfrc=RC Oscillator
+hackaBLE_v2.menu.lfclk.lfrc.build.lfclk_flags=-DUSE_LFRC
+hackaBLE_v2.menu.lfclk.lfsynt=Synthesized
+hackaBLE_v2.menu.lfclk.lfsynt.build.lfclk_flags=-DUSE_LFSYNT
 
 Blend2.name=RedBear Blend 2
 
@@ -895,3 +1014,79 @@ Sinobit.menu.softdevice.s130.softdeviceversion=2.0.1
 Sinobit.menu.softdevice.s130.upload.maximum_size=151552
 Sinobit.menu.softdevice.s130.build.extra_flags=-DNRF51 -DS130 -DNRF51_S130
 Sinobit.menu.softdevice.s130.build.ldscript=armgcc_s130_nrf51822_xxaa.ld
+
+DWM1001-DEV.name=decaWave DWM1001 Module Development Board
+
+DWM1001-DEV.upload.tool=sandeepmistry:openocd
+DWM1001-DEV.upload.protocol=jlink
+DWM1001-DEV.upload.target=nrf52
+DWM1001-DEV.upload.maximum_size=524288
+DWM1001-DEV.upload.setup_command=transport select swd;
+DWM1001-DEV.upload.use_1200bps_touch=false
+DWM1001-DEV.upload.wait_for_upload_port=false
+DWM1001-DEV.upload.native_usb=false
+
+DWM1001-DEV.bootloader.tool=sandeepmistry:openocd
+
+DWM1001-DEV.build.mcu=cortex-m4
+DWM1001-DEV.build.f_cpu=16000000
+DWM1001-DEV.build.board=DWM1001_DEV
+DWM1001-DEV.build.core=nRF5
+DWM1001-DEV.build.variant=DWM1001-DEV
+DWM1001-DEV.build.variant_system_lib=
+DWM1001-DEV.build.extra_flags=-DNRF52
+DWM1001-DEV.build.float_flags=-mfloat-abi=hard -mfpu=fpv4-sp-d16
+DWM1001-DEV.build.ldscript=nrf52_xxaa.ld
+
+DWM1001-DEV.build.lfclk_flags=-DUSE_LFXO
+
+DWM1001-DEV.menu.softdevice.none=None
+DWM1001-DEV.menu.softdevice.none.softdevice=none
+DWM1001-DEV.menu.softdevice.none.softdeviceversion=
+
+DWM1001-DEV.menu.softdevice.s132=S132
+DWM1001-DEV.menu.softdevice.s132.softdevice=s132
+DWM1001-DEV.menu.softdevice.s132.softdeviceversion=2.0.1
+DWM1001-DEV.menu.softdevice.s132.upload.maximum_size=409600
+DWM1001-DEV.menu.softdevice.s132.build.extra_flags=-DNRF52 -DS132 -DNRF51_S132
+DWM1001-DEV.menu.softdevice.s132.build.ldscript=armgcc_s132_nrf52832_xxaa.ld
+
+SeeedArchLink.name=Seeed Arch Link
+
+SeeedArchLink.upload.tool=sandeepmistry:openocd
+SeeedArchLink.upload.target=nrf51
+SeeedArchLink.upload.protocol=cmsis-dap
+SeeedArchLink.upload.maximum_size=262144
+
+SeeedArchLink.bootloader.tool=sandeepmistry:openocd
+
+SeeedArchLink.build.mcu=cortex-m0
+SeeedArchLink.build.f_cpu=16000000
+SeeedArchLink.build.board=ARCHLINK
+SeeedArchLink.build.core=nRF5
+SeeedArchLink.build.variant=SeeedArchLink
+SeeedArchLink.build.variant_system_lib=
+SeeedArchLink.build.extra_flags=-DNRF51
+SeeedArchLink.build.float_flags=
+SeeedArchLink.build.ldscript=nrf51_xxaa.ld
+
+SeeedArchLink.build.lfclk_flags=-DUSE_LFXO
+
+SeeedArchLink.menu.softdevice.none=None
+SeeedArchLink.menu.softdevice.none.softdevice=none
+SeeedArchLink.menu.softdevice.none.softdeviceversion=
+
+SeeedArchLink.menu.softdevice.s110=S110
+SeeedArchLink.menu.softdevice.s110.softdevice=s110
+SeeedArchLink.menu.softdevice.s110.softdeviceversion=8.0.0
+SeeedArchLink.menu.softdevice.s110.upload.maximum_size=151552
+SeeedArchLink.menu.softdevice.s110.build.extra_flags=-DNRF51 -DS110 -DNRF51_S110
+SeeedArchLink.menu.softdevice.s110.build.ldscript=armgcc_s110_nrf51822_xxaa.ld
+
+SeeedArchLink.menu.softdevice.s130=S130
+SeeedArchLink.menu.softdevice.s130.softdevice=s130
+SeeedArchLink.menu.softdevice.s130.softdeviceversion=2.0.1
+SeeedArchLink.menu.softdevice.s130.upload.maximum_size=151552
+SeeedArchLink.menu.softdevice.s130.build.extra_flags=-DNRF51 -DS130 -DNRF51_S130
+SeeedArchLink.menu.softdevice.s130.build.ldscript=armgcc_s130_nrf51822_xxaa.ld
+
